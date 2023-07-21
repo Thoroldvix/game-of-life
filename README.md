@@ -28,8 +28,8 @@ cell.
 
 Backend contains only 2 endpoints:
 
-1. POST /random which returns a random universe for specified dimensions
-2. POST /next which returns next generation for a specified universe
+1. POST /universe/api/v1/random which returns a random universe for specified dimensions
+2. POST /universe/api/v1/next which returns next generation for a specified universe
 
 
 ## Demo
