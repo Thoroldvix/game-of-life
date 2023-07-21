@@ -29,16 +29,8 @@ cell.
 Backend contains only 2 endpoints:
 
 1. POST /random which returns a random universe for specified dimensions
-
-       @PostMapping("/random")
-       fun createRandomUniverse(@RequestBody dimensions: Dimensions): ResponseEntity<Set<Int>> =
-       ResponseEntity.ok(godService.createRandomUniverse(dimensions))
-
 2. POST /next which returns next generation for a specified universe
 
-       @PostMapping("/next")
-       fun nextGeneration(@RequestBody universe: Universe): ResponseEntity<Set<Int>> =
-           ResponseEntity.ok(evolutionService.evolve(universe))
 
 ## Demo
 
@@ -54,6 +46,14 @@ slider. You can also generate a random universe by
 clicking on the "Random" button.
 
 ## How to run it locally
+```shell
+   git clone https://github.com/Thoroldvix/game-of-life.git
+   cd repo_directory
+   ./mvnw spring-boot:run -Pprod
+```
+After this you can access the application at http://localhost:8080/index.html
+
+
 
 
 
