@@ -1,0 +1,14 @@
+.control-button {
+  padding: 10px 15px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: teal;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.control-button:hover {
+  background-color: #006280;
+}

@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: GameOfLife
+  profiles:
+    active: @spring.profiles.active@
+server:
+  error:
+    include-message: always
+  port: ${PORT:8080}
