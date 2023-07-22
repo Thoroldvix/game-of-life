@@ -42,7 +42,7 @@ You can place cells on the grid by clicking on them. You can also remove cells b
 ready, you can start the game by clicking on the "Start" button. You can stop the game by clicking on the "Stop"
 button. You can also reset the game by clicking on the "Reset" button. You can change the speed of the game by using the
 slider. You can also generate a random universe by
-clicking on the "Random" button.
+clicking on the "Random" button. You can also place pixels while the game is running.
 
 ## How to run it locally
 ```shell

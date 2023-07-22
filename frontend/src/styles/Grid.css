@@ -16,7 +16,6 @@
 
 .row {
     display:grid;
-
 }
 
 .grid {
@@ -26,11 +25,5 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-}
-
-.grid-container {
-    max-width: 100%;
-    display: flex;
-    justify-content: center;
 }
 

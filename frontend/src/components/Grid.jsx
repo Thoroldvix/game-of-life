@@ -24,10 +24,8 @@ export const Grid = ({width, height, aliveCells, onClickCell, generation}) => {
     };
 
     return (
-        <div className="grid-container">
             <div className="grid" style={{gridTemplateColumns: `repeat(${height}, 20px)`}}>
                 {renderGrid()}
             </div>
-        </div>
     );
 };
