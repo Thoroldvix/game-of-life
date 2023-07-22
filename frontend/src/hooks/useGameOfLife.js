@@ -4,7 +4,7 @@ import {getNextGeneration, getRandomCells} from "../api/universeApi.js";
 export const useGameOfLife = ({initialWidth, initialHeight, initialSpeed}) => {
     const [width, setWidth] = useState(initialWidth);
     const [height, setHeight] = useState(initialHeight);
-    const [aliveCells, setAliveCells] = useState([]);
+    const [aliveCells, setAliveCells] = useState(() => new Set());
     const [running, setRunning] = useState(false);
     const [speed, setSpeed] = useState(initialSpeed);
     const [generation, setGeneration] = useState(0);
@@ -28,18 +28,6 @@ export const useGameOfLife = ({initialWidth, initialHeight, initialSpeed}) => {
                 return [...prevAliveCells, cellIndex];
             }
         });
-    };
-
-    const handleWidthChange = (newWidth) => {
-        if (!running) {
-            setWidth(newWidth);
-        }
-    };
-
-    const handleHeightChange = (newHeight) => {
-        if (!running) {
-            setHeight(newHeight);
-        }
     };
 
     const handleStartButtonClick = () => {
@@ -85,7 +73,7 @@ export const useGameOfLife = ({initialWidth, initialHeight, initialSpeed}) => {
         width, height, aliveCells, running, speed, generation,
         handleCellClick, handleStartButtonClick, handleStopButtonClick,
         handleResetButtonClick, handleRandomButtonClick, handleNextGenerationButtonClick,
-        handleSpeedChange, resetGrid, fetchRandomCellIndices, fetchNextGeneration, handleWidthChange, handleHeightChange
+        handleSpeedChange, resetGrid, fetchRandomCellIndices, fetchNextGeneration
 
     };
 };
@@ -99,7 +87,7 @@ export const useLifecycle = (running, speed, fetchNextGeneration, isEmpty, reset
             }
             const interval = setInterval(() => {
                 fetchNextGeneration();
-            }, 1000 / speed);
+            }, 500 / speed);
             return () => clearInterval(interval);
         }
     }, [running, speed, fetchNextGeneration]);

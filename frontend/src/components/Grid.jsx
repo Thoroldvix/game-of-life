@@ -1,31 +1,28 @@
-import React from 'react';
+import React, {useMemo} from 'react';
 import '../styles/Grid.css'
+import {Row} from "./Row.jsx";
 
-export const Grid = ({width, height, aliveCells, onClickCell, generation}) => {
-    const renderGrid = () => {
+export const Grid = React.memo(({width, height, aliveCells, onClickCell, generation}) => {
+    const aliveCellsSet = useMemo(() => new Set(aliveCells), [aliveCells]);
+    const renderGrid = useMemo(() => {
         const grid = [];
         for (let y = 0; y < height; y++) {
-            const row = [];
-            for (let x = 0; x < width; x++) {
-                const index = y * width + x;
-                const isAlive = aliveCells.includes(index);
-                const cellClass = isAlive ? 'alive' : 'dead';
-                row.push(
-                    <div
-                        key={index}
-                        className={`cell ${cellClass}`}
-                        onClick={() => onClickCell(index)}
-                    ></div>
-                );
-            }
-            grid.push(<div key={y} className="row">{row}</div>);
+            grid.push(
+                <Row
+                    key={y}
+                    rowIndex={y}
+                    width={width}
+                    aliveCellsSet={aliveCellsSet}
+                    onClickCell={onClickCell}
+                />
+            );
         }
         return grid;
-    };
+    }, [width, height, aliveCellsSet, onClickCell])
 
     return (
-            <div className="grid" style={{gridTemplateColumns: `repeat(${height}, 20px)`}}>
-                {renderGrid()}
-            </div>
+        <div className="grid" style={{gridTemplateColumns: `repeat(${height}, 20px)`}}>
+            {renderGrid}
+        </div>
     );
-};
+});
