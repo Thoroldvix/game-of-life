@@ -23,8 +23,9 @@ export const Controls = ({
             ) : (
                 <ControlButton onClick={handleStartButtonClick} label="Start"/>
             )}
-            <label htmlFor="customRange3">Speed</label>
+            <label htmlFor="slider" >Speed</label>
             <input type="range"
+                   id="slider"
                    min="1"
                    max="10"
                    className="slider"
