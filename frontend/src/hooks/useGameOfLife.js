@@ -99,7 +99,7 @@ export const useLifecycle = (running, speed, fetchNextGeneration, isEmpty, reset
             }
             const interval = setInterval(() => {
                 fetchNextGeneration();
-            }, 500 / speed);
+            }, 1000 / speed);
             return () => clearInterval(interval);
         }
     }, [running, speed, fetchNextGeneration]);
