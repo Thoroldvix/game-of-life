@@ -34,8 +34,7 @@ Backend contains only 2 endpoints:
 
 ## Demo
 
-You can find a demo of the application
-here: [https://game-of-life-frontend.herokuapp.com/](https://game-of-life-frontend.herokuapp.com/)
+You can check application [here](https://game-of-life-production-caf7.up.railway.app/index.html)
 
 ## How to use it
 
