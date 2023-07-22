@@ -14,7 +14,7 @@ export const App = () => {
         useGameOfLife({
             initialWidth: 40,
             initialHeight: 60,
-            initialSpeed: 5
+            initialSpeed: 15
         });
 
     useLifecycle(running, speed, fetchNextGeneration, aliveCells.length, resetGrid);

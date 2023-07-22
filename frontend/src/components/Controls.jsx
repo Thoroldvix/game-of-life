@@ -23,11 +23,11 @@ export const Controls = ({
             ) : (
                 <ControlButton onClick={handleStartButtonClick} label="Start"/>
             )}
-            <label htmlFor="slider" >Speed</label>
+            <label htmlFor="slider">Speed</label>
             <input type="range"
                    id="slider"
                    min="1"
-                   max="10"
+                   max="30"
                    className="slider"
                    value={speed}
                    onChange={handleSpeedChange}
