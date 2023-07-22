@@ -1,29 +1,26 @@
 .cell {
     width: 20px;
     height: 20px;
+    border-radius: 2px;
+    border: 1px solid rgba(53, 53, 53, 0.53);
     cursor: pointer;
-    border: 1px solid #2a2a2a;
     transition: background-color 0.1s ease-in-out;
+
 }
 
 .alive {
-    background-color: #faaeae;
+    background-color: #b57e7e;
+
 }
 
 .dead {
     background-color: black;
-}
 
-.row {
-    display:grid;
 }
 
 .grid {
-    display: flex;
-    border: 1px solid teal;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+    padding: 5px;
+    grid-gap: 2px;
+    display: grid;
 }
 

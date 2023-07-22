@@ -12,8 +12,8 @@ export const App = () => {
         handleSpeedChange, resetGrid, fetchNextGeneration
     } =
         useGameOfLife({
-            initialWidth: 45,
-            initialHeight: 75,
+            initialWidth: 40,
+            initialHeight: 60,
             initialSpeed: 5
         });
 
