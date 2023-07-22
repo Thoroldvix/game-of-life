@@ -55,3 +55,9 @@ build/
 
 ### VS Code ###
 .vscode/
+/frontend/node/node.exe
+/frontend/node/npm
+/frontend/node/npm.cmd
+/frontend/node/npx
+/frontend/node/npx.cmd
+/frontend/src/assets/react.svg
