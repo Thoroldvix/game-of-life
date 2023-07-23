@@ -10,8 +10,7 @@ export const Controls = ({
                              handleStopButtonClick,
                              handleStartButtonClick,
                              speed,
-                             handleSpeedChange,
-                             generation
+                             handleSpeedChange
                          }) => {
     return (
         <div className="controls">
@@ -32,7 +31,6 @@ export const Controls = ({
                    value={speed}
                    onChange={handleSpeedChange}
             ></input>
-                <h4>Generation: {generation}</h4>
         </div>
     );
 };

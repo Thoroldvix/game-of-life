@@ -8,7 +8,7 @@ export const useGameOfLife = ({initialWidth, initialHeight, initialSpeed}) => {
     const [running, setRunning] = useState(false);
     const [speed, setSpeed] = useState(initialSpeed);
     const [generation, setGeneration] = useState(0);
-    const [loading, setLoading] = useState(false);
+
 
     useEffect(() => {
         connect();
@@ -21,14 +21,9 @@ export const useGameOfLife = ({initialWidth, initialHeight, initialSpeed}) => {
     };
 
     const fetchNextGeneration = useCallback(async () => {
-        setLoading(true);
         const cells = await getNextGeneration(width, height, aliveCells);
         setAliveCells(cells);
-        if (!loading) {
-            setGeneration((prevGen) => prevGen + 1);
-        }
-        setLoading(false);
-    }, [width, height, aliveCells, loading, setGeneration]);
+    }, [width, height, aliveCells, setGeneration]);
 
     const handleCellClick = (cellIndex) => {
         setAliveCells((prevAliveCells) => {
@@ -64,7 +59,6 @@ export const useGameOfLife = ({initialWidth, initialHeight, initialSpeed}) => {
     const handleRandomButtonClick = () => {
         resetGrid();
         fetchRandomCellIndices();
-        setGeneration(1);
     };
 
     const handleNextGenerationButtonClick = () => {

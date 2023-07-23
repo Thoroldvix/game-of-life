@@ -23,7 +23,7 @@ export const App = () => {
     return (
         <div className="app-container">
             <div className="grid-container">
-                <Grid generation={generation} width={width} height={height} aliveCells={aliveCells}
+                <Grid width={width} height={height} aliveCells={aliveCells}
                       onClickCell={handleCellClick}/>
             </div>
                 <div className="controls-container">

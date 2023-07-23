@@ -2,7 +2,7 @@ import React, {useMemo} from 'react';
 import '../styles/Grid.css'
 import {Row} from "./Row.jsx";
 
-export const Grid = React.memo(({width, height, aliveCells, onClickCell, generation}) => {
+export const Grid = React.memo(({width, height, aliveCells, onClickCell}) => {
     const aliveCellsSet = useMemo(() => new Set(aliveCells), [aliveCells]);
     const renderGrid = useMemo(() => {
         const grid = [];
