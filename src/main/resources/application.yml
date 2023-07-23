@@ -7,3 +7,4 @@ server:
   error:
     include-message: always
   port: ${PORT:8080}
+allowed-origin: ${ALLOWED_ORIGIN:http://localhost:5173}

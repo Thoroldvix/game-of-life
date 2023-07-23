@@ -17,7 +17,8 @@ initial configuration and observing how it evolves.
 ## Implementation
 
 All game logic calculations are done on the backend side. The frontend is only responsible for displaying the game and
-controlling its state. For better performance, backend only returns cells that are alive. Grid of cells is represented
+controlling its state. Communication between frontend and backend is done using websockets. For better performance,
+backend only returns cells that are alive. Grid of cells is represented
 as 1D set of integers, where each integer is a cell position in the grid. For example, a grid with 3x3 dimensions will
 be
 represented as a set of integers: {0, 1, 2, 3, 4, 5, 6, 7, 8}. Where cell index starts in the top left corner and ends
@@ -25,12 +26,6 @@ in the bottom right corner. This representation allows for better performance wh
 not need to iterate over all cells in the grid, but only over living cells, and also we are not using an object to
 represent a
 cell.
-
-Backend contains only 2 endpoints:
-
-1. POST /random which returns a random universe for specified dimensions
-2. POST /next which returns next generation for a specified universe
-
 
 ## Demo
 
@@ -45,11 +40,13 @@ slider. You can also generate a random universe by
 clicking on the "Random" button. You can also place pixels while the game is running.
 
 ## How to run it locally
+
 ```shell
    git clone https://github.com/Thoroldvix/game-of-life.git
    cd repo_directory
    ./mvnw spring-boot:run -Pprod
 ```
+
 After this you can access the application at http://localhost:8080/index.html
 
 

@@ -1,24 +1,58 @@
-import axios from "axios";
+import SockJS from 'sockjs-client/dist/sockjs';
+import Stomp from 'stompjs';
+
+let stompClient = null;
+let resolveFunction = null;
 
 
-export const getRandomCells = async (width, height) => {
-    try {
-        return (await axios.post(
-            `${import.meta.env.VITE_API_BASE_URL}/api/v1/universe/random`,
-            {width, height}
-        )).data;
-    } catch (e) {
-        console.log(e);
+export const connect = () => {
+    if (stompClient != null) {
+        return;
     }
+    const socket = new SockJS(`${import.meta.env.VITE_API_BASE_URL}/ws`);
+    stompClient = Stomp.over(socket);
+    stompClient.connect({}, onConnected, onError);
 }
 
-export const getNextGeneration = async (width, height, cells) => {
-    const dimensions = {width, height};
-    try {
-        return (await axios.post(
-            `${import.meta.env.VITE_API_BASE_URL}/api/v1/universe/next`,
-            {dimensions, cells})).data;
-    } catch (e) {
-        console.log(e);
+const onError = (error) => {
+    console.log(error);
+}
+
+const onCellsReceived = (payload) => {
+    const cells = JSON.parse(payload.body);
+    resolveFunction(cells);
+}
+
+const onConnected = () => {
+    stompClient.subscribe('/topic/universe', onCellsReceived);
+}
+
+export const getRandomCells = (width, height) => {
+    return new Promise((resolve, reject) => {
+        if (!stompClient) {
+            return reject(new Error('Not connected'));
+        }
+        resolveFunction = resolve;
+        const dimensions = {width, height};
+        stompClient.send("/app/random", {}, JSON.stringify(dimensions));
+    });
+}
+
+export const getNextGeneration = (width, height, cells) => {
+    return new Promise((resolve, reject) => {
+        if (!stompClient) {
+            return reject(new Error('Not connected'));
+        }
+        resolveFunction = resolve;
+        const dimensions = {width, height};
+        stompClient.send("/app/next", {}, JSON.stringify({dimensions, cells}));
+    });
+}
+
+export const disconnect = () => {
+    if (stompClient != null) {
+        stompClient.disconnect();
+        console.log("Disconnected");
     }
+    stompClient = null;
 }

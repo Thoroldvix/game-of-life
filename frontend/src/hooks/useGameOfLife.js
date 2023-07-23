@@ -1,14 +1,19 @@
 import {useCallback, useEffect, useState} from "react";
-import {getNextGeneration, getRandomCells} from "../api/universeApi.js";
+import {connect, disconnect, getNextGeneration, getRandomCells} from "../api/universeApi.js";
 
 export const useGameOfLife = ({initialWidth, initialHeight, initialSpeed}) => {
     const [width, setWidth] = useState(initialWidth);
     const [height, setHeight] = useState(initialHeight);
-    const [aliveCells, setAliveCells] = useState(() => new Set());
+    const [aliveCells, setAliveCells] = useState([]);
     const [running, setRunning] = useState(false);
     const [speed, setSpeed] = useState(initialSpeed);
     const [generation, setGeneration] = useState(0);
     const [loading, setLoading] = useState(false);
+
+    useEffect(() => {
+        connect();
+    }, []);
+
 
     const fetchRandomCellIndices = async () => {
         const randomAliveCellIndices = await getRandomCells(width, height);
@@ -92,7 +97,7 @@ export const useLifecycle = (running, speed, fetchNextGeneration, isEmpty, reset
             }
             const interval = setInterval(() => {
                 fetchNextGeneration();
-            }, 1000 / speed);
+            }, 500 / speed);
             return () => clearInterval(interval);
         }
     }, [running, speed, fetchNextGeneration]);

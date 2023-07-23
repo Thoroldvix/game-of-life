@@ -1,4 +1,4 @@
-package com.thoroldvix.gameoflife
+package com.thoroldvix.gameoflife.universe
 
 internal data class Dimensions(val width: Int, val height: Int) {
     init {

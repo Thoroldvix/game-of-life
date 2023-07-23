@@ -1,4 +1,4 @@
-package com.thoroldvix.gameoflife
+package com.thoroldvix.gameoflife.universe
 
 import org.springframework.stereotype.Service
 import kotlin.random.Random

@@ -1,8 +1,8 @@
 package com.thoroldvix.gameoflife.service
 
-import com.thoroldvix.gameoflife.Dimensions
-import com.thoroldvix.gameoflife.EvolutionService
-import com.thoroldvix.gameoflife.Universe
+import com.thoroldvix.gameoflife.universe.Dimensions
+import com.thoroldvix.gameoflife.universe.EvolutionService
+import com.thoroldvix.gameoflife.universe.Universe
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 

@@ -1,8 +1,8 @@
 package com.thoroldvix.gameoflife.model
 
-import com.thoroldvix.gameoflife.CellOutOfBoundsException
-import com.thoroldvix.gameoflife.Dimensions
-import com.thoroldvix.gameoflife.Universe
+import com.thoroldvix.gameoflife.universe.CellOutOfBoundsException
+import com.thoroldvix.gameoflife.universe.Dimensions
+import com.thoroldvix.gameoflife.universe.Universe
 import org.assertj.core.api.Assertions.assertThat
 import org.assertj.core.api.Assertions.assertThatThrownBy
 import org.junit.jupiter.api.Test

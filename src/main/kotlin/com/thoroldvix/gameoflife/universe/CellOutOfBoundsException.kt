@@ -1,4 +1,4 @@
-package com.thoroldvix.gameoflife
+package com.thoroldvix.gameoflife.universe
 
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.ResponseStatus

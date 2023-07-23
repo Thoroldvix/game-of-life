@@ -1,4 +1,4 @@
-package com.thoroldvix.gameoflife
+package com.thoroldvix.gameoflife.universe
 
 internal data class Universe(val dimensions: Dimensions, val cells: Set<Int>) {
     init {
