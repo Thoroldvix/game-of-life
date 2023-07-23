@@ -5,7 +5,6 @@
     border: 1px solid rgba(53, 53, 53, 0.53);
     cursor: pointer;
     transition: background-color 0.1s ease-in-out;
-
 }
 
 .alive {
@@ -13,7 +12,12 @@
 
 }
 
+
+
 .dead {
     background-color: black;
+}
 
+.dead:hover {
+    background-color: rgba(0, 128, 128, 0.31);
 }

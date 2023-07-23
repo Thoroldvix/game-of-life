@@ -2,7 +2,6 @@
     width: 20px;
     height: 20px;
     border-radius: 2px;
-    border: 1px solid rgba(53, 53, 53, 0.53);
     cursor: pointer;
     transition: background-color 0.1s ease-in-out;
 
