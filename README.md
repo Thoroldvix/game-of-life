@@ -42,9 +42,9 @@ clicking on the "Random" button. You can also place pixels while the game is run
 ## How to run it locally
 
 ```shell
-   git clone https://github.com/Thoroldvix/game-of-life.git
-   cd repo_directory
-   ./mvnw spring-boot:run -Pprod
+git clone https://github.com/Thoroldvix/game-of-life.git
+cd repo_directory
+./mvnw spring-boot:run -Pprod
 ```
 
 After this you can access the application at http://localhost:8080/index.html
