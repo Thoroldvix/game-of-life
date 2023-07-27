@@ -29,7 +29,7 @@ cell.
 
 ## Demo
 
-You can check application [here](https://game-of-life-production-caf7.up.railway.app/index.html)
+You can check application [here]( https://game-of-life-production-caf7.up.railway.app/index.html)
 
 ## How to use it
 
