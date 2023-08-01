@@ -19,6 +19,7 @@ initial configuration and observing how it evolves.
  * Spring Boot
  * React
  * Websockets
+ * Maven
 
 ## Implementation
 
