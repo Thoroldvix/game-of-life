@@ -14,6 +14,12 @@ initial configuration and observing how it evolves.
 3. Any live cell with more than three live neighbours dies, as if by overpopulation.
 4. Any dead cell with exactly three live neighbors becomes a live cell, as if by reproduction.
 
+## Technologies
+ * Kotlin
+ * Spring Boot
+ * React
+ * Websockets
+
 ## Implementation
 
 All game logic calculations are done on the backend side. The frontend is only responsible for displaying the game and

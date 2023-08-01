@@ -4,15 +4,13 @@
     border-radius: 2px;
     border: 1px solid rgba(53, 53, 53, 0.53);
     cursor: pointer;
-    transition: background-color 0.1s ease-in-out;
+    transition:  0.2s ease-in;
 }
 
 .alive {
     background-color: #b57e7e;
 
 }
-
-
 
 .dead {
     background-color: black;
