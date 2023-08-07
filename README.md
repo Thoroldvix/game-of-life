@@ -16,6 +16,7 @@ initial configuration and observing how it evolves.
 
 ## Technologies
  * Kotlin
+ * Javascript
  * Spring Boot
  * React
  * Websockets
