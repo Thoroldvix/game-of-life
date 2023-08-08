@@ -7,6 +7,6 @@ internal data class Dimensions(val width: Int, val height: Int) {
 
     private fun validateDimensions() {
         if (width < 1 || height < 1)
-            throw InvalidDimensionsException("Width and height must greater than 0")
+            throw InvalidDimensionsException("Width and height must be greater than 0")
     }
 }
