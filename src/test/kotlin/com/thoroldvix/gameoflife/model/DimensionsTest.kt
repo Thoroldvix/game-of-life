@@ -11,7 +11,7 @@ internal class DimensionsTest {
     fun `should throw InvalidDimensionsException when trying to create a dimension with negative width`() {
         assertThatThrownBy { Dimensions(-1, 1) }
             .isInstanceOf(InvalidDimensionsException::class.java)
-            .hasMessage("Width and height must greater than 0")
+            .hasMessage("Width and height must be greater than 0")
 
     }
 
@@ -19,7 +19,7 @@ internal class DimensionsTest {
     fun `should throw InvalidDimensionsException when trying to create a dimension with negative height`() {
         assertThatThrownBy { Dimensions(1, -1) }
             .isInstanceOf(InvalidDimensionsException::class.java)
-            .hasMessage("Width and height must greater than 0")
+            .hasMessage("Width and height must be greater than 0")
 
     }
 }
