@@ -1,7 +1,5 @@
-package com.thoroldvix.gameoflife.model
+package com.thoroldvix.gameoflife.universe
 
-import com.thoroldvix.gameoflife.universe.Dimensions
-import com.thoroldvix.gameoflife.universe.InvalidDimensionsException
 import org.assertj.core.api.Assertions.assertThatThrownBy
 import org.junit.jupiter.api.Test
 

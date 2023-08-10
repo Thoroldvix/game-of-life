@@ -1,4 +1,4 @@
-package com.thoroldvix.gameoflife.service
+package com.thoroldvix.gameoflife.universe
 
 import com.thoroldvix.gameoflife.universe.GodService
 import com.thoroldvix.gameoflife.universe.Dimensions
