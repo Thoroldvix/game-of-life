@@ -35,10 +35,6 @@ not need to iterate over all cells in the grid, but only over living cells, and 
 represent a
 cell.
 
-## Demo
-
-You can check application [here]( https://game-of-life-production-caf7.up.railway.app/index.html)
-
 ## How to use it
 
 You can place cells on the grid by clicking on them. You can also remove cells by clicking on them again. When you are
